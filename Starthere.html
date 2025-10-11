@@ -67,9 +67,9 @@
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center; /* centered horizontally */
-      padding: 0 10%;
-      text-align: center;
+      justify-content: flex-start; /* Push content to the left side */
+      padding-left: 8%;
+      padding-right: 8%;
     }
 
     .overlay {
@@ -82,9 +82,9 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
-      text-align: center; /* center all hero text */
-      transform: translateY(50px); /* move slightly downward */
+      max-width: 600px;
+      text-align: center;  /* center text lines */
+      transform: translateY(50px); /* shift slightly downward */
     }
 
     .wave {
@@ -142,8 +142,8 @@
       }
 
       .hero {
+        justify-content: center;  /* Center whole block on mobile */
         padding: 0 20px;
-        justify-content: center;
       }
 
       .hero-content {
@@ -188,8 +188,8 @@
     <h1>SAGAR JAGTAP</h1>
     <nav>
       <ul>
-        <li><a href="Updatedprofile.html">START HERE</a></li>
-        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="Starthere.html">START HERE</a></li>
+        <li><a href="#">ABOUT</a></li>
         <li><a href="#">PROJECTS</a></li>
         <li><a href="#">DASHBOARDS</a></li>
         <li><a href="#">BLOGS</a></li>
