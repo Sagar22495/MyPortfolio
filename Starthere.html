@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 
   <style>
-    /* ========== Base Reset ========== */
     * {
       margin: 0;
       padding: 0;
@@ -18,12 +17,12 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      color: white;
       background-color: #000;
+      color: white;
       overflow-x: hidden;
     }
 
-    /* ========== Header ========== */
+    /* ===== HEADER ===== */
     header {
       position: absolute;
       top: 0;
@@ -33,6 +32,7 @@
       align-items: center;
       padding: 20px 60px;
       z-index: 10;
+      transition: all 0.3s ease-in-out;
     }
 
     header h1 {
@@ -45,7 +45,11 @@
       list-style: none;
       display: flex;
       gap: 30px;
-      flex-wrap: wrap;
+      position: relative;
+    }
+
+    nav ul li {
+      position: relative;
     }
 
     nav ul li a {
@@ -54,22 +58,55 @@
       font-weight: 600;
       font-size: 0.9rem;
       transition: color 0.3s;
+      padding: 5px;
+      display: block;
     }
 
     nav ul li a:hover {
       color: #00bcd4;
     }
 
-    /* ========== Hero Section ========== */
+    /* ===== DROPDOWN ===== */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #111;
+      min-width: 200px;
+      top: 25px;
+      left: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+
+    .dropdown-content a {
+      padding: 10px 15px;
+      color: #fff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #00bcd4;
+      color: #000;
+    }
+
+    nav ul li:hover .dropdown-content {
+      display: block;
+    }
+
+    /* ===== HERO ===== */
     .hero {
       height: 100vh;
       background: url('Screenshot_2025_1005_113645.jpg') center center/cover no-repeat;
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* Push content to the left side */
+      justify-content: flex-start;
       padding-left: 8%;
       padding-right: 8%;
+      transition: all 0.3s ease;
     }
 
     .overlay {
@@ -83,8 +120,8 @@
       position: relative;
       z-index: 2;
       max-width: 600px;
-      text-align: center;  /* center text lines */
-      transform: translateY(50px); /* shift slightly downward */
+      text-align: center;
+      transform: translateY(50px);
     }
 
     .wave {
@@ -115,7 +152,7 @@
       margin-top: 8px;
     }
 
-    /* ========== Responsive Styling ========== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       header {
         padding: 15px 30px;
@@ -128,22 +165,48 @@
       .hero-content h2 {
         font-size: 2.5rem;
       }
-
-      .subtitle, .details {
-        font-size: 1.1rem;
-      }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
+      /* make header solid to separate from hero image */
       header {
+        position: relative;
+        background-color: rgba(0,0,0,0.85);
         flex-direction: column;
         align-items: flex-start;
         padding: 15px 25px;
       }
 
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      .dropdown-content {
+        position: static;
+        background: none;
+        box-shadow: none;
+        border: none;
+        display: none;
+      }
+
+      nav ul li:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        padding-left: 25px;
+      }
+
       .hero {
-        justify-content: center;  /* Center whole block on mobile */
+        justify-content: center;
         padding: 0 20px;
+        margin-top: 20px; /* prevent overlap with nav */
       }
 
       .hero-content {
@@ -153,7 +216,7 @@
       }
 
       .hero-content h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       .subtitle, .details {
@@ -162,6 +225,10 @@
     }
 
     @media (max-width: 480px) {
+      .hero {
+        margin-top: 40px; /* ensure full separation */
+      }
+
       .hero-content h2 {
         font-size: 1.7rem;
       }
@@ -170,26 +237,32 @@
         font-size: 1.3rem;
       }
 
-      .subtitle, .details {
-        font-size: 0.95rem;
-      }
-
       nav ul {
         gap: 10px;
-        flex-wrap: wrap;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <h1>SAGAR JAGTAP</h1>
     <nav>
       <ul>
-        <li><a href="Starthere.html">START HERE</a></li>
-        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">START HERE</a></li>
+
+        <!-- ABOUT DROPDOWN -->
+        <li>
+          <a href="#">ABOUT ▾</a>
+          <div class="dropdown-content">
+            <a href="professional_journey.html">Professional Journey</a>
+            <a href="technical_experties.html">Technical Expertise</a>
+            <a href="about.html#achievements">Achievements</a>
+            <a href="about.html#philosophy">Work Philosophy</a>
+            <a href="about.html#beyond">Beyond Work</a>
+          </div>
+        </li>
+
         <li><a href="#">PROJECTS</a></li>
         <li><a href="#">DASHBOARDS</a></li>
         <li><a href="#">BLOGS</a></li>
@@ -199,20 +272,21 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
       <div class="wave">👋👋👋</div>
       <h2>HEY, I'M SAGAR JAGTAP</h2>
-      <p class="subtitle">ERP Systems ↔ Data Analytics ↔ Data Science ↔ MIS Reporting </p>
-      <p class="details">MS Excel + Power BI + Python</p>
+      <p class="subtitle">ERP Systems ↔ MIS Reporting ↔ Data Analytics</p>
+      <p class="details">Excel + Power BI + Python + Google Sheets</p>
       <p class="details">Turning Data into Actionable Business Insights</p>
       <p class="details">Automating Reports | Building Dashboards | Driving Decisions</p>
     </div>
   </section>
 </body>
 </html>
+
+
 
 
 
