@@ -1,0 +1,221 @@
+/* ===== BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fb;
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+  color: #007a99;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* ===== NAVIGATION ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  color: #00bcd4;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  top: 30px;
+  left: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #222;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #e6f7fa;
+  color: #007a99;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #007a99;
+  cursor: pointer;
+}
+
+/* ===== MOBILE NAVIGATION ===== */
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #ffffff;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    padding-top: 100px;
+  }
+
+  nav.open {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: none;
+    box-shadow: none;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    color: #007a99;
+  }
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
+              url('sagar.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 60px;
+  margin-top: 70px;
+}
+
+.hero-content {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.50);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h2 {
+  font-size: 2.4rem;
+  color: #007a99;
+  margin-bottom: 10px;
+}
+
+.wave {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #007a99;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.details {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  color: #666;
+  padding: 20px 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+/* ===== RESPONSIVE HERO ===== */
+@media (max-width: 800px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-content {
+    background: rgba(255,255,255,0.9);
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+}

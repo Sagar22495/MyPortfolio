@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Sagar Jagtap</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet" />
 
   <style>
     /* ===== BASE ===== */
@@ -21,6 +21,7 @@
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -28,14 +29,13 @@
       padding: 20px 60px;
       z-index: 999;
       transition: all 0.4s ease-in-out;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e0e0e0;
+      background: transparent;
     }
 
     header.scrolled {
       background: rgba(255,255,255,0.95);
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
     }
 
     .logo {
@@ -44,18 +44,22 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      display: flex;
+      align-items: center;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 30px;
-      position: relative;
     }
 
-    nav ul li {
-      position: relative;
-    }
+    nav ul li { position: relative; }
 
     nav ul li a {
       color: #222;
@@ -63,12 +67,13 @@
       font-weight: 600;
       font-size: 0.9rem;
       transition: color 0.3s;
+      padding: 5px;
+      display: block;
     }
 
-    nav ul li a:hover {
-      color: #00bcd4;
-    }
+    nav ul li a:hover { color: #00bcd4; }
 
+    /* Dropdown */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -79,6 +84,7 @@
       border-radius: 8px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
       overflow: hidden;
+      z-index: 999;
     }
 
     .dropdown-content a {
@@ -94,28 +100,80 @@
       color: #007a99;
     }
 
-    nav ul li:hover .dropdown-content {
-      display: block;
+    nav ul li:hover .dropdown-content { display: block; }
+
+    /* ===== HAMBURGER MENU ===== */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: #007a99;
+      cursor: pointer;
     }
 
-    /* ===== BANNER ===== */
+    @media (max-width: 850px) {
+      .menu-toggle { display: block; }
+      nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #ddd;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      nav.open { display: flex; }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul li a {
+        color: #007a99;
+        font-size: 1rem;
+      }
+
+      nav ul li:hover .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: none;
+      }
+
+      .dropdown-content a { padding-left: 25px; }
+    }
+
+    /* ===== QUOTE BANNER ===== */
     .banner {
-      height: 40vh;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.9)), url('light_banner.jpg') center/cover no-repeat;
+      height: 45vh;
+      background: linear-gradient(135deg, #e6f7fa, #ffffff, #f3fcfd);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 20px;
       margin-top: 70px;
+      color: #007a99;
     }
 
     .banner h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       font-style: italic;
-      color: #007a99;
       max-width: 700px;
+      margin-bottom: 15px;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      color: #444;
     }
 
     /* ===== ABOUT SECTION ===== */
@@ -174,29 +232,6 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 800px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 25px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
-
-      .dropdown-content {
-        position: static;
-        background: #fff;
-        box-shadow: none;
-        display: none;
-      }
-
-      nav ul li:hover .dropdown-content {
-        display: block;
-      }
-
       .about-section {
         flex-direction: column;
         text-align: center;
@@ -207,6 +242,8 @@
         width: 180px;
         height: 180px;
       }
+
+      .banner h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -214,10 +251,11 @@
 <body>
   <!-- ===== HEADER ===== -->
   <header id="mainHeader">
-    <h1><a href="Starthere.html" class="logo">SAGAR JAGTAP</a></h1>
-    <nav>
+    <h1><a href="index.html" class="logo">SAGAR JAGTAP</a></h1>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav id="mainNav">
       <ul>
-        <li><a href="Starthere.html">START HERE</a></li>
+        <li><a href="index.html">START HERE</a></li>
         <li>
           <a href="about.html">ABOUT ▾</a>
           <div class="dropdown-content">
@@ -237,25 +275,26 @@
     </nav>
   </header>
 
-  <!-- ===== BANNER ===== -->
+  <!-- ===== QUOTE BANNER ===== -->
   <section class="banner">
-    <h1>“Driven by Curiosity. Guided by Data. Focused on Results.”</h1>
+    <h1>“Keep learning. Keep evolving. Let your work speak quietly but powerfully.”</h1>
+    <p>— Sagar Jagtap</p>
   </section>
 
   <!-- ===== ABOUT SECTION ===== -->
   <section class="about-section">
     <div class="about-photo">
-      <img src="sjpic.jpg" alt="Sagar Jagtap">
+      <img src="sagar.jpg" alt="Sagar Jagtap" />
     </div>
     <div class="about-content">
       <h2>About Sagar</h2>
       <p>
         I’m an <strong>ERP & Data Analytics professional</strong> with over five years of experience in the real estate sector, helping organizations make smarter, data-driven decisions.  
-        <br><br>
+        <br /><br />
         My work revolves around turning complex business data into meaningful dashboards and insights using tools like <strong>Power BI, Excel, and Python</strong>.  
         I’m passionate about automation, storytelling with data, and continuously learning to create better solutions every day.  
-        <br><br>
-        Outside work, I’m a curious learner who believes that progress comes from asking better questions and staying humble in the face of endless learning.
+        <br /><br />
+        Outside work, I’m a curious learner who believes that progress begins with questions — and every dataset hides an opportunity to improve lives.
       </p>
     </div>
   </section>
@@ -265,17 +304,36 @@
     © 2025 Sagar Jagtap | Data Analytics & ERP Professional
   </footer>
 
-  <!-- ===== JS: HEADER SCROLL ===== -->
+  <!-- ===== JS ===== -->
   <script>
+    // Header scroll behavior
     window.addEventListener('scroll', function() {
       const header = document.getElementById('mainHeader');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      menuToggle.textContent = mainNav.classList.contains('open') ? '✕' : '☰';
+    });
+
+    // Close menu on link click
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNav.classList.contains('open')) {
+          mainNav.classList.remove('open');
+          menuToggle.textContent = '☰';
+        }
+      });
     });
   </script>
 </body>
 </html>
+
 
