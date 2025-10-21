@@ -373,4 +373,102 @@ footer {
   
 }
 
+/* Hero for Work Philosophy */
+.philosophy-hero {
+  background: url('philosophy.jpg') no-repeat center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.philosophy-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background-color: #f9f9f9;
+  padding: 70px 20px;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.philosophy-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  transition: all 0.5s ease;
+}
+
+.philosophy-card:hover::before {
+  left: 0;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.philosophy-card h2 {
+  color: #007bff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.philosophy-card p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Quote Section */
+.vision-quote {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 50px;
+}
+
+.vision-quote blockquote {
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.vision-quote span {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
 
