@@ -34,5 +34,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+//PROJECT SECTION//
+
+// ===== PROJECT FILTERS =====
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projects = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    projects.forEach(project => {
+      if (filter === "all" || project.dataset.category === filter) {
+        project.style.display = "block";
+      } else {
+        project.style.display = "none";
+      }
+    });
+  });
+});
+
+// ===== OPEN GITHUB REPO =====
+function openRepo(url) {
+  window.open(url, "_blank");
+}
+
+
 
 //BEYOND WORK SLIDE//

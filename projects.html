@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Sagar Jagtap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header id="mainHeader">
+    <a href="Starthere.html" class="logo">SAGAR JAGTAP</a>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="Starthere.html">START HERE</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)">ABOUT ▾</a>
+          <div class="dropdown-content">
+            <a href="aboutsagar.html">About Sagar</a>
+            <a href="professional_journey.html">Professional Journey</a>
+            <a href="technical_experties.html">Technical Expertise</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="workphilosophy.html">Work Philosophy</a>
+            <a href="beyondwork.html">Beyond Work</a>
+          </div>
+        </li>
+        <li><a href="projects.html" class="active">PROJECTS</a></li>
+        <li><a href="blogs.html">BLOGS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <a href="SAGAR_MIS-ERP-STRATEGY.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="banner-section">
+    <img src="MYWORK.jpg" alt="Projects Banner" class="banner-img">
+    <div class="banner-text">
+      <h1>MY WORK</h1>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="powerbi">Power BI</button>
+    <button class="filter-btn" data-filter="web">Web Dev</button>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="project-card python" data-category="python" onclick="openRepo('https://github.com/Sagar22495/Customer_Churn_Analysis.git')">
+      <img src="CustomerChurn.webp" alt="Customer Churn Analysis" class="project-img">
+      <div class="project-info">
+        <h3>Customer Churn Analysis</h3>
+        <p>Customer Churn Analysis 📊 A project to analyze and predict customer churn using machine learning and data analysis techniques on a telecom customer dataset.</p>
+        <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
+      </div>
+    </div>
+
+    <div class="project-card python" data-category="python" onclick="openRepo('https://github.com/Sagar22495/Diwali_Sales_Analysis')">
+      <img src="DiwaliAnalysis.png" alt="Diwali Sales Analysis" class="project-img">
+      <div class="project-info">
+        <h3>Diwali Sales Analysis</h3>
+        <p>Diwali Sales Analysis 🪔 A data analysis and visualization project exploring Diwali Sales Trends and Patterns.</p>
+        <p><strong>Tools:</strong>Python, Pandas, Matplotlib</p>
+      </div>
+    </div>
+
+    <div class="project-card web" data-category="web" onclick="openRepo('https://github.com/Sagar22495/MyPortfolio')">
+      <img src="portfolio.jpg" alt="Portfolio Website" class="project-img">
+      <div class="project-info">
+        <h3>Personal Portfolio</h3>
+        <p>Responsive portfolio website to showcase professional journey, projects, and insights.</p>
+        <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
+      </div>
+    </div>
+
+    <div class="project-card python" data-category="python" onclick="openRepo('https://github.com/Sagar22495/Hotel_Booking')">
+      <img src="HotelTrends.jpg"alt="Hotel Booking Analysis" class="project-img">
+      <div class="project-info">
+        <h3>Hotel Booking Analysis</h3>
+        <p>Hotel Booking Analysis 🏨📊 A data analysis project on hotel booking data.</p>
+        <p><strong>Tools:</strong> Python, Jupyter Notebook, Matplotlib</p>
+      </div>
+    </div>
+
+    <div class="project-card python" data-category="python" onclick="openRepo('https://github.com/Sagar22495/IPL_Data_Analysis')">
+      <img src="ipl-dashboard.jpg" alt="IPL Data Analysis" class="project-img">
+      <div class="project-info">
+        <h3>IPL Data Analysis</h3>
+        <p>IPL Data Analysis 🏏 A data-driven exploration of Indian Premier League (IPL).</p>
+        <p><strong>Tools:</strong> Python, Pandas, Seaborn</p>
+      </div>
+    </div>
+    <div class="project-card powerbi" data-category="powerbi" onclick="openRepo('https://github.com/Sagar22495/PBI_HR_ATTRITION.git')">
+      <img src="HR Attrition.png" alt="HR Attrition" class="project-img">
+      <div class="project-info">
+        <h3>HR Attrition</h3>
+        <p>HR Attrition 🧑‍💼 is a Power BI project designed to analyze Human Resources (HR) attrition data.</p>
+        <p><strong>Tools:</strong> PowerBI, Excel, Data Visualization</p>
+      </div>
+    </div>
+    <div class="project-card powerbi" data-category="powerbi" onclick="openRepo('https://github.com/Sagar22495/PBI-_StudentSurvey.git')">
+      <img src="StudentSurvey.png" alt="Student Survey Analysis" class="project-img">
+      <div class="project-info">
+        <h3>Student Survey Analysis</h3>
+        <p>PBI Student Survey Analysis 🎓📊 This project leverages Power BI to analyze the results from a Student Survey.</p>
+        <p><strong>Tools:</strong> PowerBI, Excel, Data Extraction</p>
+      </div>
+    </div>
+    <div class="project-card powerbi" data-category="powerbi" onclick="openRepo('https://github.com/Sagar22495/PBI_ESSIES_LTD.git')">
+      <img src="Essises.png" alt="Essises Company" class="project-img">
+      <div class="project-info">
+        <h3>Essises Company</h3>
+        <p>This repository contains a Power BI project developed to analyze business data for Essies Ltd. 🏢 (a fictional company).</p>
+        <p><strong>Tools:</strong> PowerBI, Excel</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sagar Jagtap. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
