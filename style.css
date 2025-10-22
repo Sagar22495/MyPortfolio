@@ -221,7 +221,7 @@ footer {
 }
 /* Journey Hero */
 .journey-hero {
-    background: url('carrerpath.jpg') no-repeat center/cover;
+    background: url('MYWORK.jpg') no-repeat center/cover;
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -312,7 +312,7 @@ footer {
 
 /* Hero for Technical Expertise */
 .tech-hero {
-  background: url('technicalexpertise.jpg') no-repeat center/cover;
+  background: url('MYWORK.jpg') no-repeat center/cover;
   height: 60vh;
   display: flex;
   justify-content: center;
