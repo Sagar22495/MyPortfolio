@@ -822,3 +822,117 @@ footer {
   background-color: #0056b3; /* darker blue on hover */
   transform: scale(1.05);
 }
+
+/* CONTACT DETAILS */
+
+/* ===== CONTACT PAGE ===== */
+.contact-section {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #001f3f, #0a192f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px;
+  overflow: hidden;
+}
+
+.contact-container {
+  text-align: center;
+  z-index: 2;
+  color: #e0e0e0;
+  max-width: 800px;
+}
+
+.contact-container h1 {
+  font-size: 2.8rem;
+  color: #00bcd4;
+  margin-bottom: 10px;
+  animation: fadeDown 1s ease-in-out;
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #cfd8dc;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00bcd4;
+  transition: transform 0.3s ease;
+}
+
+.contact-card span {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #00bcd4;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  color: #cfd8dc;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.2);
+}
+
+.contact-card:hover i {
+  transform: scale(1.2);
+}
+
+/* Animated floating particles */
+.contact-bg-animation {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.04) 0,
+    rgba(0, 255, 255, 0.04) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  animation: movePattern 15s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes movePattern {
+  from { transform: translate(0, 0); }
+  to { transform: translate(60px, 60px); }
+}
+
+/* Entry Animation */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .contact-container h1 {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Sagar Jagtap</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="mainHeader">
+    <a href="Starthere.html" class="logo">SAGAR JAGTAP</a>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="Starthere.html">Home</a></li>
+        <li><a href="aboutsagar.html">About</a></li>
+        <li><a href="professional_journey.html">Experience</a></li>
+        <li><a href="technical_experties.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="workphilosophy.html">Philosophy</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h1>Let's Connect 🤝</h1>
+      <p class="contact-intro">Feel free to reach out for collaborations, projects, or just a friendly chat!</p>
+
+      <div class="contact-grid">
+        <a href="mailto:jagtaps100@gmail.com" class="contact-card" target="_blank">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email</span>
+          <p>jagtaps100@gmail.com</p>
+        </a>
+
+        <a href="tel:+919860256542" class="contact-card">
+          <i class="fa-solid fa-phone"></i>
+          <span>Phone</span>
+          <p>+91 9130567152</p>
+        </a>
+
+        <a href="https://github.com/Sagar22495" class="contact-card" target="_blank">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+          <p>@Sagar22495</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/sagarjagtap22495" class="contact-card" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+          <p>/in/sagarjagtap22495</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-bg-animation"></div>
+  </section>
+
+  <script>
+    // Background floating animation
+    document.addEventListener("mousemove", e => {
+      const bg = document.querySelector(".contact-bg-animation");
+      const moveX = (e.clientX * 0.02);
+      const moveY = (e.clientY * 0.02);
+      bg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  </script>
+</body>
+</html>
