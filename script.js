@@ -61,6 +61,8 @@ function openRepo(url) {
   window.open(url, "_blank");
 }
 
+//CONTACT DETAILS //
+
 
 
 //BEYOND WORK SLIDE//

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Sagar Jagtap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header id="mainHeader">
+    <a href="Starthere.html" class="logo">SAGAR JAGTAP</a>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="Starthere.html">Home</a></li>
+        <li><a href="aboutsagar.html">About</a></li>
+        <li><a href="professional_journey.html">Experience</a></li>
+        <li><a href="technical_experties.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="workphilosophy.html">Philosophy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="hero tech-hero">
+    <div class="hero-content">
+      <h1>Blogs 📜</h1>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="powerbi">Power BI</button>
+    <button class="filter-btn" data-filter="web">Web Dev</button>
+    <button class="filter-btn" data-filter="SQL">SQL</button>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="project-card python" data-category="powerbi">
+      <img src="top10dax.png" alt="Top 10 DAX Functions" class="project-img">
+      <div class="project-info">
+        <h3>Top 10 DAX Functions Every Analyst Should Know</h3>
+        <p>Master DAX functions that supercharge Power BI reports.</p>
+        <p style="color: red;"   onclick="openRepo('https://www.linkedin.com/in/sagar-jagtap-9a099b2b7/')"><strong>Read Full Article ...</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
