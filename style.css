@@ -825,7 +825,7 @@ footer {
 
 /* CONTACT DETAILS */
 
-/* ===== CONTACT PAGE ===== */
+/* ===== CONTACT PAGE (Responsive Fixed Version) ===== */
 .contact-section {
   position: relative;
   min-height: 100vh;
@@ -833,45 +833,54 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 20px 60px;
+  padding: 100px 20px 60px; /* top reduced for mobile */
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .contact-container {
   text-align: center;
   z-index: 2;
   color: #e0e0e0;
-  max-width: 800px;
+  max-width: 850px;
+  width: 100%;
 }
 
 .contact-container h1 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: #00bcd4;
   margin-bottom: 10px;
   animation: fadeDown 1s ease-in-out;
 }
 
 .contact-intro {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  margin-bottom: 35px;
   color: #cfd8dc;
+  padding: 0 15px;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .contact-card {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(0, 188, 212, 0.2);
   border-radius: 15px;
-  padding: 25px;
+  padding: 25px 15px;
   text-decoration: none;
   color: #e0e0e0;
   transition: all 0.4s ease;
   backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-card i {
@@ -891,6 +900,7 @@ footer {
 .contact-card p {
   font-size: 0.9rem;
   color: #cfd8dc;
+  word-break: break-word;
 }
 
 .contact-card:hover {
@@ -902,7 +912,7 @@ footer {
   transform: scale(1.2);
 }
 
-/* Animated floating particles */
+/* Background animation */
 .contact-bg-animation {
   position: absolute;
   top: 0; left: 0;
@@ -920,19 +930,32 @@ footer {
   pointer-events: none;
 }
 
+/* Keyframes */
 @keyframes movePattern {
   from { transform: translate(0, 0); }
   to { transform: translate(60px, 60px); }
 }
 
-/* Entry Animation */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== MOBILE FIXES ===== */
 @media (max-width: 768px) {
+  .contact-section {
+    padding-top: 130px; /* extra gap below navbar */
+  }
+
   .contact-container h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .contact-card {
+    padding: 20px 10px;
+  }
+
+  .contact-card i {
+    font-size: 1.8rem;
   }
 }
