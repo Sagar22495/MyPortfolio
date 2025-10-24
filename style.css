@@ -576,7 +576,7 @@ footer {
 }
 
 .philosophy-card {
-  background: white;
+  background: rgb(62, 80, 244);
   border-radius: 16px;
   padding: 25px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
@@ -602,17 +602,17 @@ footer {
 
 .philosophy-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 25px rgb(255, 255, 255);
 }
 
 .philosophy-card h2 {
-  color: #007bff;
+  color: #f4f5f7;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .philosophy-card p {
-  color: #444;
+  color: #f7f3f3;
   font-size: 1rem;
   line-height: 1.6;
 }
